@@ -1,6 +1,3 @@
-
-
-
 class Node:
     """ Node level data structure for binary tree"""
 
