@@ -119,3 +119,23 @@ class BinaryTree:
             print(str(node.value) + ' ', end = '')
             self._print_tree(node.right_child)
 
+    def find_depth(self):
+        """ Return the tree max depth """
+        return self._find_depth(self.root, 0)
+
+    def _find_depth(self, node, depth):
+        """ Find and return max depth of the tree from the current node """
+        if node:
+            left = self._find_depth(node.left_child, depth + 1)
+            right = self._find_depth(node.right_child, depth + 1)
+            if left > right:
+                depth = left
+            else:
+                depth = right
+        return depth
+
+
+tree = BinaryTree()
+[tree.add(num) for num in [1,5,3,7,8,6]]
+
+print(tree.find_depth())
