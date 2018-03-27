@@ -133,9 +133,3 @@ class BinaryTree:
             else:
                 depth = right
         return depth
-
-
-tree = BinaryTree()
-[tree.add(num) for num in [1,5,3,7,8,6]]
-
-print(tree.find_depth())
